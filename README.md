@@ -1,2 +1,1 @@
-# pjs
-Making web faster.
+Making the Web faster.
