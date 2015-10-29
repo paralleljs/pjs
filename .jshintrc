@@ -1,16 +1,20 @@
 {
   "globals": {
     "define": true,
-    "DEBUG": true
+    "DEBUG": true,
+    "console": false
   },
 
   "asi": false,
   "boss": true,
   "browser": true,
+  "camelcase": true,
   "curly": true,
   "eqeqeq": true,
   "eqnull": true,
+  "globalstrict": true,
   "immed": true,
+  "indent": 4,
   "lastsemic": true,
   "latedef": true,
   "laxbreak": true,
@@ -20,6 +24,7 @@
   "nomen": false,
   "plusplus": false,
   "sub": true,
+  "strict": true,
   "undef": true,
   "white": false
 }

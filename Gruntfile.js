@@ -29,6 +29,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jasmine');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-jscs');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -65,7 +66,7 @@ module.exports = function(grunt) {
     jasmine: {
       src: 'src/**/*.js',
       options: {
-        specs: 'test/**/*.test.js'
+        specs: 'test/**/*.tests.js'
       }
     },
     jshint: {
@@ -76,12 +77,18 @@ module.exports = function(grunt) {
       options: {
         jshintrc: '.jshintrc'
       }
+    },
+    jscs: {
+    	src: ['src/**/*.js', 'test/**/*.js'],
+	options: {
+	    config: '.jscsrc'
+	}
     }
   });
 
-  grunt.registerTask('default', [
+  grunt.registerTask('test', [
       'jshint',
-      'build',
+      'jscs',
       'jasmine'
     ]);
   grunt.registerTask('build', [
